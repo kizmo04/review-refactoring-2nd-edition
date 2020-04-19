@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`htmlStatement 청구내역을 테이블로 그려야 한다. 1`] = `
+"<h1>청구 내역 (고객명: BigCo)</h1>
+<table>
+<tr><th>연극</th><th>좌석 수</th><th>금액</th></tr> <tr><td>Hamlet</td></tr><tr><td>(55석)</td></tr><tr><td>$650.00</td></tr>
+ <tr><td>As You Like It</td></tr><tr><td>(35석)</td></tr><tr><td>$580.00</td></tr>
+ <tr><td>Othello</td></tr><tr><td>(40석)</td></tr><tr><td>$500.00</td></tr>
+</table>
+<p>총액: <em>$1,730.00</em></p>
+<p>적립 포인트: <em>47점</em></p>
+"
+`;
