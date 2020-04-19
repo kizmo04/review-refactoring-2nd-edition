@@ -1,13 +1,10 @@
-const invoice = require("./invoices.json")[0];
-const plays = require("./plays.json");
-
-function statement(invoice, plays) {
-  const statementData = {};
-  statementData.customer = invoice.customer;
-  statementData.performances = invoice.performances.map(enrichPerformance);
-  statementData.totalAmount = totalAmount(statementData);
-  statementData.totalVolumeCredits = totalVolumeCredits(statementData);
-  return renderPlainText(statementData, plays);
+function createStatementData(invoice, plays) {
+  const result = {};
+  result.customer = invoice.customer;
+  result.performances = invoice.performances.map(enrichPerformance);
+  result.totalAmount = totalAmount(result);
+  result.totalVolumeCredits = totalVolumeCredits(result);
+  return result;
 
   function enrichPerformance(aPerformance) {
     const result = Object.assign({}, aPerformance);
@@ -61,25 +58,4 @@ function statement(invoice, plays) {
   }
 }
 
-function renderPlainText(data, plays) {
-  let result = `청구 내역 (고객명: ${data.customer})\n`;
-  for (let perf of data.performances) {
-    // 청구 내역을 출력한다
-    result += ` ${perf.play.name}: ${usd(perf.amount)} (${perf.audience}석)\n`;
-  }
-  result += `총액: ${usd(data.totalAmount)}\n`;
-  result += `적립 포인트: ${data.totalVolumeCredits}점\n`;
-  return result;
-
-  function usd(aNumber) {
-    return new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-      minimumFractionDigits: 2,
-    }).format(aNumber / 100);
-  }
-}
-
-module.exports = {
-  statement,
-};
+module.exports = createStatementData;
