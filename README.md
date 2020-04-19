@@ -61,3 +61,4 @@
   - statement로 계산 관련 코드를 모두 모은다.
   - statement는 계산 결과를 중간 데이터를 통해 renderPlainText로 전달한다.
   - renderPlainText는 invoice나 plays를 알 필요 없이 중간 데이터를 표현하는 역할만 집중한다.
+- 단계가 분리된 이후, 각자의 파일로 나눠준다.
