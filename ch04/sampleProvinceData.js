@@ -8,3 +8,5 @@ const sampleProvinceData = () => ({
   demand: 30,
   price: 20,
 });
+
+module.exports = sampleProvinceData;
