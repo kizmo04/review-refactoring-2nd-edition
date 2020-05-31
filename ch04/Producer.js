@@ -12,7 +12,7 @@ class Producer {
     return this._name;
   }
 
-  get const() {
+  get cost() {
     return this._cost;
   }
   set cost(arg) {
