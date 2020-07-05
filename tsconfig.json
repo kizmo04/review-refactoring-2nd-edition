@@ -5,7 +5,9 @@
     "noImplicitAny": true,
     "module": "esnext",
     "target": "es6",
-    "jsx": "react"
+    "jsx": "react",
+    "lib": ["es6", "es2017", "esnext"],
+    "esModuleInterop": true
   },
   "include": ["ch10/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
