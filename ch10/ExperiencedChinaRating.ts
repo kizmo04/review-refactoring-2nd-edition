@@ -9,8 +9,8 @@ class ExperiencedChinaRating extends Rating {
   get voyageAndHistoryLengthFactor() {
     let result = 3;
     if (this.history.length > 10) result += 1;
-    if (this.history.length > 12) result += 1;
-    if (this.history.length > 18) result += 1;
+    if (this.voyage.length > 12) result += 1;
+    if (this.voyage.length > 18) result += 1;
     return result;
   }
 }
