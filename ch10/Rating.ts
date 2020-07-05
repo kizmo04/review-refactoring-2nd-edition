@@ -37,7 +37,6 @@ class Rating {
     let result = 1;
     if (this.history.length < 5) result += 4;
     result += this.history.filter(v => v.profit < 0).length;
-    if (this.voyage.zone === '중국' && this.hasChinaHistory) result -= 2;
     return Math.max(result, 0);
   }
 
