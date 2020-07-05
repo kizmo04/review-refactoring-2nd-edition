@@ -9,8 +9,8 @@ export interface Record {
 }
 
 class Rating {
-  private voyage: Voyage;
-  private history: Record[];
+  protected voyage: Voyage;
+  protected history: Record[];
 
   constructor(voyage: Voyage, history: Record[]) {
     this.voyage = voyage;
@@ -48,16 +48,14 @@ class Rating {
     let result = 2;
     if (this.voyage.zone === '중국') result += 1;
     if (this.voyage.zone === '동인도') result += 1;
-    if (this.voyage.zone === '중국' && this.hasChinaHistory) {
-      result += 3;
+    result += this.voyageAndHistoryLengthFactor;
+    return result;
+  }
 
-      if (this.history.length > 10) result += 1;
-      if (this.history.length > 12) result += 1;
-      if (this.history.length > 18) result += 1;
-    } else {
-      if (this.history.length > 8) result += 1;
-      if (this.history.length > 14) result += 1;
-    }
+  get voyageAndHistoryLengthFactor() {
+    let result = 0;
+    if (this.history.length > 8) result += 1;
+    if (this.history.length > 14) result += 1;
     return result;
   }
 }
