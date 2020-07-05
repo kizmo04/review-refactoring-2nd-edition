@@ -9,7 +9,7 @@ interface Record {
 }
 
 export default function rating(voyage: Voyage, history: Record[]) {
-  return createRating(voyage, history);
+  return createRating(voyage, history).value;
 }
 
 class Rating {

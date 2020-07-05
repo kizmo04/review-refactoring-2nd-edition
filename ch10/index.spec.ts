@@ -13,19 +13,7 @@ describe('변형 동작을 다형성으로 표현하기', () => {
     it('', () => {
       const myRating = rating(voyage, history);
 
-      const {
-        value,
-        voyageProfitFactor,
-        voyageRisk,
-        captainHistoryRisk,
-        hasChinaHistory,
-      } = myRating;
-
-      expect(value).toBe('B');
-      expect(voyageRisk).toBe(5);
-      expect(voyageProfitFactor).toBe(2);
-      expect(captainHistoryRisk).toBe(6);
-      expect(hasChinaHistory).toBe(true);
+      expect(myRating).toBe('B');
     });
   });
 });
