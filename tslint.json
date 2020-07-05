@@ -1,0 +1,40 @@
+{
+  "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
+  "rules": {
+    "no-submodule-imports": [
+      true,
+      "lib",
+      "api",
+      "app",
+      "contexts",
+      "mocks",
+      "admin",
+      "common",
+      "meshone",
+      "sanitize.css",
+      "components",
+      "react-dates",
+      "file-loader",
+      "file-saver",
+      "decimal.js",
+      "lodash-es",
+      "react-dom",
+      "react-sortable-tree",
+      "uuid",
+      "csv-parse"
+    ],
+    "ordered-imports": false,
+    "interface-name": false,
+    "jsx-boolean-value": false,
+    "no-var-requires": false,
+    "object-literal-sort-keys": false,
+    "no-implicit-dependencies": false,
+    "no-object-literal-type-assertion": false,
+    "no-string-throw": false,
+    "no-namespace": false,
+    "trailing-comma": [
+      true,
+      { "multiline": "always", "singleline": "never", "esSpecCompliant": true }
+    ]
+  }
+}
