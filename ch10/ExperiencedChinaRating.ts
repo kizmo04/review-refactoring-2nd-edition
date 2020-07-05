@@ -6,12 +6,19 @@ class ExperiencedChinaRating extends Rating {
     return Math.max(result, 0);
   }
 
-  get voyageAndHistoryLengthFactor() {
-    let result = 3;
-    if (this.history.length > 10) result += 1;
+  get voyageLengthFactor() {
+    let result = 0;
     if (this.voyage.length > 12) result += 1;
     if (this.voyage.length > 18) result += 1;
     return result;
+  }
+
+  get historyLengthFactor() {
+    return this.history.length > 10 ? 1 : 0;
+  }
+
+  get voyageProfitFactor() {
+    return super.voyageProfitFactor + 3;
   }
 }
 
