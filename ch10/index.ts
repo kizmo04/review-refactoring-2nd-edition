@@ -3,7 +3,7 @@ function rating(voyage, history) {
   const vr = voyageRisk(voyage);
   const chr = captainHistoryRisk(voyage, history);
   if (vpf * 3 > vr + chr * 2) return 'A';
-  else return '0';
+  else return 'B';
 }
 
 function voyageRisk(voyage) {
